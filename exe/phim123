@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'lecture7'
+puts Lecture7::Phim123.new.movies
