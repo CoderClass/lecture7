@@ -6,6 +6,11 @@ describe Lecture7 do
   end
 
   it "returns a list of movie names" do
-    expect(Lecture7::Movie.all).to eq []
+    search = Lecture7::Search.new url: "http://123phim.vn/phim"
+    expect(search.movies.first).to eq "Sinh Vật Huyền Bí Và Nơi Tìm Ra Chúng"
+  end
+
+  it "returns [] by default" do
+    expect(Lecture7::Search.new.movies).to eq []
   end
 end
