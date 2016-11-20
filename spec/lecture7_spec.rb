@@ -6,8 +6,11 @@ describe Lecture7 do
   end
 
   it "returns a list of movie names" do
-    search = Lecture7::Search.new url: "http://123phim.vn/phim"
-    expect(search.movies.first).to eq "Sinh Vật Huyền Bí Và Nơi Tìm Ra Chúng"
+    VCR.use_cassette("movies") do
+      search = Lecture7::Phim123.new url: "http://123phim.vn/phim"
+
+      expect(search.movies.first).to eq "Sinh Vật Huyền Bí Và Nơi Tìm Ra Chúng"
+    end
   end
 
   it "returns [] by default" do
