@@ -5,7 +5,7 @@ describe Lecture7 do
     expect(Lecture7::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  it "returns a list of movie names" do
+    expect(Lecture7::Movie.all).to eq []
   end
 end
